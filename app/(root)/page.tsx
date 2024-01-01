@@ -4,7 +4,7 @@ export default async function Home() {
   const session = await getServerSession();
 
   return (
-    <main>
+    <>
       {/* <p>Get Server Session</p>
       {
         session?.user?.name ? (
@@ -13,6 +13,7 @@ export default async function Home() {
           <div>No logged in</div>
         )
       } */}
-    </main>
+      <p className="text-gray-100">Text</p>
+    </>
   )
 }
