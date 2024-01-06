@@ -12,6 +12,6 @@ export const UserSchema = z.object({
     bio: z
         .string()
         .min(2, { message: "Bio must be 2 or more characters long" })
-        .max(1000, { message: "Bio must not be than 1000 characters long" }),
+        .max(1000, { message: "B must not be than 1000 characters long" }),
 
 })
