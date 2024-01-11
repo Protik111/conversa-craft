@@ -19,15 +19,27 @@ import { UserSchema } from "@/lib/validations/user"
 import Image from "next/image"
 import { ChangeEvent } from "react"
 
-const AccountProfile = () => {
+interface UserDataTypes {
+    name: string;
+    email: string;
+    image: string;
+    username?: string;
+    bio?: string;
+}
+
+interface AccountProfileProps {
+    user: UserDataTypes;
+}
+
+const AccountProfile = ({ user }: AccountProfileProps) => {
 
     const form = useForm({
         resolver: zodResolver(UserSchema),
         defaultValues: {
-            profilePhoto: "",
-            name: "",
-            username: "",
-            bio: ""
+            profilePhoto: user?.image ? user.image : "",
+            name: user?.name ? user.name : "",
+            username: user?.username ? user.username : "",
+            bio: user?.bio ? user.bio : "",
         }
     })
 
